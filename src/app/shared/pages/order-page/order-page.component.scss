@@ -1,0 +1,17 @@
+.order {
+  &-content {
+    &__form {
+    }
+  }
+}
+
+.form {
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__field {
+    }
+  }
+}

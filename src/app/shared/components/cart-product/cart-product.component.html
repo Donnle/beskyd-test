@@ -1,0 +1,17 @@
+<mat-card>
+  <img [alt]="cartItem.name" [src]="cartItem.imageUrl" class="image" mat-card-image>
+  <mat-card-content>
+    <h3>{{cartItem.name}}</h3>
+    <p>{{cartItem.price | currency:'USD'}}</p>
+  </mat-card-content>
+  <mat-card-actions class="actions">
+    <div class="actions-counter">
+      <button (click)="decrementProductAmount()" mat-raised-button>-</button>
+      <span class="amount">{{cartItem.amount}}</span>
+      <button (click)="incrementProductAmount()" mat-raised-button>+</button>
+    </div>
+    <div class="actions-remove">
+      <button (click)="removeProduct()" mat-raised-button>Видалити</button>
+    </div>
+  </mat-card-actions>
+</mat-card>

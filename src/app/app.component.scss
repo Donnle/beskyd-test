@@ -1,0 +1,5 @@
+@import "src/app/mixins";
+
+.container {
+  @include wrapper;
+}

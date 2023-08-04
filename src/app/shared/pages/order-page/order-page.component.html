@@ -1,0 +1,39 @@
+<div class="order">
+  <div class="order-content">
+    <form [formGroup]="orderForm" class="order-content__form form">
+      <div class="form-content">
+        <mat-form-field class="form-content__field">
+          <mat-label>ПІБ</mat-label>
+          <input [formControlName]="'fullName'" matInput placeholder="ПІБ" type="text">
+          <mat-hint>Помилок нема!</mat-hint>
+          <mat-error *ngIf="orderForm.get('fullName')?.hasError('required')">
+            Це поле <strong>обов'язкове</strong>!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-content__field">
+          <mat-label>Номер телефону</mat-label>
+          <input [formControlName]="'phoneNumber'" matInput placeholder="Номер телефону">
+          <mat-hint>Помилок нема!</mat-hint>
+          <mat-error
+            *ngIf="orderForm.get('phoneNumber')?.hasError('minlength')">
+            Мінімальна довжина номеру телефона: {{PHONE_NUMBER_MIN_LENGTH}}
+          </mat-error>
+          <mat-error
+            *ngIf="orderForm.get('phoneNumber')?.hasError('maxlength')">
+            Максимальна довжина номеру телефона: {{PHONE_NUMBER_MAX_LENGTH}}
+          </mat-error>
+          <mat-error *ngIf="orderForm.get('phoneNumber')?.hasError('required')">
+            Це поле <strong>обов'язкове</strong>!
+          </mat-error>
+        </mat-form-field>
+        <button
+          (click)="onSubmit()"
+          [disabled]="orderForm.invalid"
+          mat-raised-button
+        >
+          Придбати
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

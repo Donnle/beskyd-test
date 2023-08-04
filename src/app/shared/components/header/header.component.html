@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="header-wrapper">
+    <div class="header-content">
+      <div [routerLink]="''" class="header-content__logo">
+        <span class="header-content__logo-text">BESKYD</span>
+      </div>
+      <nav class="header-content__menu menu">
+        <ul class="menu-list">
+          <li *ngFor="let item of menuItems" class="menu-list__item">
+            <button [routerLink]="item.routerLink" class="menu-list__item-link" color="primary" mat-raised-button>
+              {{item.name}}
+              <span *ngIf="countItemsInCart > 0">({{countItemsInCart}})</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

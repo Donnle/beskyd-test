@@ -1,0 +1,9 @@
+@import "src/app/mixins";
+
+.home {
+  &-content {
+    &__products {
+      @include products;
+    }
+  }
+}

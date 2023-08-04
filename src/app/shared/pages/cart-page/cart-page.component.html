@@ -1,0 +1,21 @@
+<div class="cart">
+  <div class="cart-content">
+    <ng-container *ngIf="cart.length > 0; else emptyCart">
+      <div class="cart-content__products">
+        <app-cart-product *ngFor="let cartItem of cart" [cartItem]="cartItem"></app-cart-product>
+      </div>
+      <div class="cart-content__total-price">
+        <span class="cart-content__total-price-text">Всього: {{totalPrice | currency:'USD'}}</span>
+      </div>
+      <div class="cart-content__order">
+        <button [routerLink]="'/order'" class="cart-content__order-button" color="primary" mat-raised-button>Перейти до
+          оплати
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #emptyCart>
+  <h2>Корзина пуста!</h2>
+</ng-template>

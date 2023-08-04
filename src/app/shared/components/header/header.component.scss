@@ -1,0 +1,41 @@
+@import "src/app/mixins";
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 0;
+  background-color: #fff;
+  z-index: 999;
+
+  &-wrapper {
+    @include wrapper;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__logo {
+      cursor: pointer;
+
+      &-text {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.menu {
+  &-list {
+    &__item {
+      &-link {
+        cursor: pointer;
+        padding: 20px;
+      }
+    }
+  }
+}
